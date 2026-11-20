@@ -32,7 +32,6 @@
       <button type="button" class="nb" id="n-lesson" onclick="go('lesson')">📘 12. Cours &amp; الملخص</button>
     </div>
 
-    <!-- 1. COACH BUSINESS PARTOUT AU MAROC -->
     <div id="sec-biz" class="sec">
       <div class="card">
         <h3>💸 Coach Business : Comment Gagner de l'Argent Partout au Maroc ?</h3>
@@ -55,7 +54,6 @@
       </div>
     </div>
 
-    <!-- 2. PLAN D'ACTION ÉTAPE PAR ÉTAPE -->
     <div id="sec-roadmap" class="sec" style="display:none">
       <div class="card">
         <h3>🚀 Plan d'Action Concret : De 0 DH à vos Premiers Revenus</h3>
@@ -67,7 +65,6 @@
       </div>
     </div>
 
-    <!-- 3. CONSEILLER IMMO -->
     <div id="sec-advisor" class="sec" style="display:none">
       <div class="card">
         <h3>🎯 Conseiller Stratégique : Où &amp; Comment Investir dans l'Immobilier ?</h3>
@@ -87,7 +84,6 @@
       </div>
     </div>
 
-    <!-- 4. QUARTIERS PAR VILLE -->
     <div id="sec-cities" class="sec" style="display:none">
       <div class="card">
         <h3>📍 Analyse Détaillée des Quartiers Rentables au Maroc</h3>
@@ -104,7 +100,6 @@
       </div>
     </div>
 
-    <!-- 5. SIMULATEUR AIRBNB -->
     <div id="sec-airbnb" class="sec" style="display:none">
       <div class="card">
         <h3>🔑 Simulateur Rentabilité Airbnb &amp; Sous-Location</h3>
@@ -120,7 +115,6 @@
       </div>
     </div>
 
-    <!-- 6. RENDEMENT BRUT VS NET -->
     <div id="sec-yield" class="sec" style="display:none">
       <div class="card">
         <h3>📊 Calculateur Rendement Brut vs Net Simplifié</h3>
@@ -133,8 +127,6 @@
         <div id="y-out" style="margin-top:8px"></div>
       </div>
     </div>
-
-    <!-- 7. CRÉDIT MAROC 35% -->
     <div id="sec-loan" class="sec" style="display:none">
       <div class="card">
         <h3>🏦 Capacité d'Emprunt Bancaire au Maroc (Hypothèse 35%)</h3>
@@ -150,8 +142,106 @@
       </div>
     </div>
 
-    <!-- 8. CASH-FLOW -->
     <div id="sec-cashflow" class="sec" style="display:none">
       <div class="card">
         <h3>⚖️ Simulateur Cash-Flow &amp; Test de Résistance</h3>
         <div class="g3">
+          <div><label>Loyer encaissé (DH) :</label><input type="number" id="cf-rent" value="3500" oninput="calcCf()"></div>
+          <div><label>Mensualité crédit (DH) :</label><input type="number" id="cf-bank" value="2800" oninput="calcCf()"></div>
+          <div><label>Charges / mois (DH) :</label><input type="number" id="cf-exp" value="400" oninput="calcCf()"></div>
+        </div>
+        <div id="cf-out" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <div id="sec-compare" class="sec" style="display:none">
+      <div class="card">
+        <h3>🆚 Comparateur : Appartement A vs Appartement B</h3>
+        <div class="g2">
+          <div style="background:#1E293B;padding:10px;border-radius:8px">
+            <strong style="color:#FBBF24;font-size:13px">🏢 Appartement A</strong>
+            <label style="margin-top:6px">Prix d'achat (DH) :</label><input type="number" id="ca-p" value="500000" oninput="calcComp()">
+            <label>Loyer mensuel (DH) :</label><input type="number" id="ca-r" value="3500" oninput="calcComp()">
+            <label>Crédit mensuel (DH) :</label><input type="number" id="ca-b" value="2800" oninput="calcComp()">
+            <label>Charges / mois (DH) :</label><input type="number" id="ca-e" value="400" oninput="calcComp()">
+          </div>
+          <div style="background:#1E293B;padding:10px;border-radius:8px">
+            <strong style="color:#34D399;font-size:13px">🏢 Appartement B</strong>
+            <label style="margin-top:6px">Prix d'achat (DH) :</label><input type="number" id="cb-p" value="420000" oninput="calcComp()">
+            <label>Loyer mensuel (DH) :</label><input type="number" id="cb-r" value="3000" oninput="calcComp()">
+            <label>Crédit mensuel (DH) :</label><input type="number" id="cb-b" value="2400" oninput="calcComp()">
+            <label>Charges / mois (DH) :</label><input type="number" id="cb-e" value="300" oninput="calcComp()">
+          </div>
+        </div>
+        <div id="comp-out" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <div id="sec-contracts" class="sec" style="display:none">
+      <div class="card">
+        <h3>📜 Générateur de Contrats &amp; Clauses Légales</h3>
+        <label>Type de document à générer :</label>
+        <select id="ct-type" onchange="genContract()">
+          <option value="sub">Clause de Sous-Location Touristique Autorisée (Bail)</option>
+          <option value="mgmt">Mandat de Gestion Conciergerie Airbnb (Commission %)</option>
+        </select>
+        <div class="g2">
+          <div><label>Nom du Propriétaire :</label><input type="text" id="ct-owner" value="M. Karim Benali" oninput="genContract()"></div>
+          <div><label>Votre Nom / Société :</label><input type="text" id="ct-you" value="Atlas Stay Conciergerie" oninput="genContract()"></div>
+          <div><label>Adresse du Bien :</label><input type="text" id="ct-addr" value="Appt 12, Quartier Maarif, Casablanca" oninput="genContract()"></div>
+          <div><label>Loyer (DH) ou Commission (%) :</label><input type="text" id="ct-val" value="4 500 DH / 20%" oninput="genContract()"></div>
+        </div>
+        <div class="fc" id="ct-out" style="margin-top:8px;white-space:pre-line"></div>
+        <button type="button" class="pdf" style="width:100%;margin-top:8px;padding:9px" onclick="copyContract()">📋 Copier le Contrat / la Clause</button>
+      </div>
+    </div>
+
+    <div id="sec-tax" class="sec" style="display:none">
+      <div class="card">
+        <h3>🧾 Frais d'Achat, Fiscalité &amp; Budget Ameublement</h3>
+        <div class="row"><span>🏛️ Droits d'enregistrement (Achat) :</span><strong>4% du prix d'achat</strong></div>
+        <div class="row"><span>📑 Conservation Foncière (ANCFCC) :</span><strong>1,5% + frais fixes</strong></div>
+        <div class="row"><span>⚖️ Honoraires Notaire :</span><strong>~1% (+ TVA 10%)</strong></div>
+        <div class="row"><span>💻 Régime Auto-Entrepreneur (Services) :</span><strong>1% du CA (Plafond 200k DH/an)</strong></div>
+        <div class="row"><span>🏠 Impôt Revenus Locatifs (Particuliers) :</span><strong>Abattement 40% puis barème IR</strong></div>
+        <div class="row" style="border:none"><span>🛋️ Pack Ameublement Studio Airbnb :</span><strong>35 000 – 55 000 DH clé en main</strong></div>
+        <div class="tip">🔑 <strong>Règle de sécurité :</strong> N'achetez jamais un bien sans <strong>Titre Foncier</strong> vérifié chez le notaire (évitez le <em>Melkia</em> non titré si vous débutez).</div>
+      </div>
+    </div>
+
+    <div id="sec-lesson" class="sec" style="display:none">
+      <div class="card">
+        <h3>📘 Les 3 Modèles Airbnb &amp; Règles d'Or (خلاصة الدرس)</h3>
+        <p class="sm"><strong>1. Gestionnaire (Conciergerie) :</strong> Tu gères le bien d'un propriétaire (photos, annonces, voyageurs, ménage) contre <strong>15% à 25%</strong> des revenus.</p>
+        <p class="sm"><strong>2. Sous-location autorisée :</strong> Tu signes un bail classique avec accord écrit du propriétaire autorisant la location courte durée.</p>
+        <p class="sm"><strong>3. Propriétaire investisseur :</strong> Tu achètes au comptant ou à crédit, tu meubles et tu encaisses les loyers + la plus-value 2030.</p>
+        <div class="row"><span>📊 Rendement Brut :</span><strong>(Loyer annuel ÷ Prix d'achat) × 100</strong></div>
+        <div class="row"><span>🎯 Rendement Net Simplifié :</span><strong>((Loyer annuel − Charges) ÷ Coût total) × 100</strong></div>
+        <div class="row" style="border:none"><span>💰 Cash-Flow Mensuel :</span><strong>Loyer encaissé − Mensualité crédit − Charges</strong></div>
+        <div class="tip">🇲🇦 <strong>القاعدة الأساسية بالدارجة :</strong> الاستثمار العقاري ما كيتقاسش غير بالكراء اللي كيدخل، ولكن بالمصاريف، بالقرض، وبقدرتك على تحمل الظروف غير المتوقعة (<strong>هامش الأمان / Marge de sécurité</strong>) إلا نقص الكراء بـ 300 أو 500 درهم أو بقات الشقة بلا مكتري.</div>
+      </div>
+    </div>
+
+    <div class="line" style="margin-top:14px;margin-bottom:0"></div>
+  </div>
+<script>
+var secs = ["biz", "roadmap", "advisor", "cities", "airbnb", "yield", "loan", "cashflow", "compare", "contracts", "tax", "lesson"];
+function go(n) {
+  for (var i = 0; i < secs.length; i++) {
+    var id = secs[i];
+    var s = document.getElementById('sec-' + id);
+    var b = document.getElementById('n-' + id);
+    if (s) s.style.display = (id === n) ? 'block' : 'none';
+    if (b) b.className = (id === n) ? 'nb active' : 'nb';
+  }
+}
+function runBiz() {
+  var reg = document.getElementById('biz-reg').value;
+  var cap = document.getElementById('biz-cap').value;
+  var out = document.getElementById('biz-out');
+  var regions = {
+    casa: { name: "Grand Casablanca (Casa, Dar Bouazza, Oulad Azzouz, Bouskoura)", zero: "Conciergerie Airbnb à Maarif/Marina, apporteur d’affaires immobilier sur Dar Bouazza / Oulad Azzouz / Bouskoura, ou services B2B.", small: "Sous-location meublée près de Casa Finance City (CFC), e-commerce Paiement à la Livraison (COD) depuis Derb Omar, ou location de scooters/voitures.", big: "Achat studio/F2 à louer aux cadres (CFC/Bouskoura) ou local commercial dans les nouvelles zones résidentielles." },
+    nord: { name: "Nord & Tanger Med (Tanger, Tétouan, Chefchaouen)", zero: "Gestionnaire Airbnb pour les MRE propriétaires d’appartements fermés l’hiver, ou agence digitale/sourcing.", small: "Sous-location touristique à Malabata / Tanger Ville (clientèle espagnole & week-end) ou transport touristique privé.", big: "Achat studio près de la gare TGV Al Boraq / Ibn Batouta ou maison d’hôtes à Chefchaouen / Asilah." },
+    kech: { name: "Marrakech & Centre (Marrakech, Agafay)", zero: "Co-hôte Airbnb & organisation d’excursions (Agafay, quad, transferts aéroport) avec commission de 20% à 30%.", small: "Sous-location autorisée à Guéliz / Hivernage (taux d’occupation annuel parmi les plus élevés d’Afrique).", big: "Achat appartement touristique ou rénovation de petit Riad titré en Médina." },
+    sud: { name: "Agadir & Souss-Massa (Agadir, Taghazout)", zero: "Conciergerie pour surfeurs & Digital Nomads à Taghazout / Tamraght, ou vente en ligne de produits d’Argan bio.", small: "Surf-house / coliving en sous-location à Taghazout ou location de matériel nautique et vélos.", big: "Achat appartement vue mer à Founty / Marina d’Agadir (très demandé par les retraités européens en hiver)." },
+    sahara: { name: "Sud & Sahara Marocain (Laâyoune, Dakhla)", zero: "Services logistiques, tourisme kitesurf/lagune à Dakhla ou conseil aux investisseurs.", small: "Équipement sportif, restauration rapide moderne ou sous-location pour cadres et techniciens des grands chantiers.", big: "Immobilier résidentiel pour cadres/ingénieurs ou écolodge touristique autour de la lagune de Dakhla." },
