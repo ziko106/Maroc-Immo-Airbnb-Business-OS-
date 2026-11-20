@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maroc Immo, Airbnb & Business OS — Guide Revenus 12-en-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="line"></div>
+    <div class="top">
+      <span class="badge">★ MAROC IMMO, AIRBNB &amp; BUSINESS OS — 12-EN-1</span>
+      <button type="button" class="pdf" onclick="window.print()">📥 Exporter PDF</button>
+    </div>
+
+    <h1>Guide Complet : Gagner de l'Argent &amp; Investir au Maroc</h1>
+    <p class="lead">Coach Business Tout le Maroc • Plan d'Action 0 à 500k DH • Simulateur Airbnb • Rendement Net • Crédit 35% • Cash-Flow • Contrats.</p>
+
+    <div class="nav">
+      <button type="button" class="nb active" id="n-biz" onclick="go('biz')">💸 1. Gagner au Maroc</button>
+      <button type="button" class="nb" id="n-roadmap" onclick="go('roadmap')">🚀 2. Plan d'Action</button>
+      <button type="button" class="nb" id="n-advisor" onclick="go('advisor')">🎯 3. Où Investir Immo</button>
+      <button type="button" class="nb" id="n-cities" onclick="go('cities')">📍 4. Quartiers / Ville</button>
+      <button type="button" class="nb" id="n-airbnb" onclick="go('airbnb')">🔑 5. Simu Airbnb</button>
+      <button type="button" class="nb" id="n-yield" onclick="go('yield')">📊 6. Rendement Net</button>
+      <button type="button" class="nb" id="n-loan" onclick="go('loan')">🏦 7. Crédit 35%</button>
+      <button type="button" class="nb" id="n-cashflow" onclick="go('cashflow')">⚖️ 8. Cash-Flow</button>
+      <button type="button" class="nb" id="n-compare" onclick="go('compare')">🆚 9. Appt A vs B</button>
+      <button type="button" class="nb" id="n-contracts" onclick="go('contracts')">📜 10. Contrats Pro</button>
+      <button type="button" class="nb" id="n-tax" onclick="go('tax')">🧾 11. Impôts/Notaire</button>
+      <button type="button" class="nb" id="n-lesson" onclick="go('lesson')">📘 12. Cours &amp; الملخص</button>
+    </div>
+
+    <!-- 1. COACH BUSINESS PARTOUT AU MAROC -->
+    <div id="sec-biz" class="sec">
+      <div class="card">
+        <h3>💸 Coach Business : Comment Gagner de l'Argent Partout au Maroc ?</h3>
+        <label>Choisissez votre Région ou Ville au Maroc :</label>
+        <select id="biz-reg" onchange="runBiz()">
+          <option value="casa">Grand Casablanca (Casa, Dar Bouazza, Oulad Azzouz, Bouskoura, Mohammedia)</option>
+          <option value="nord">Nord &amp; Tanger Med (Tanger, Tétouan, Chefchaouen, Nador)</option>
+          <option value="kech">Marrakech &amp; Centre (Marrakech, Agafay, Beni Mellal)</option>
+          <option value="sud">Agadir &amp; Souss-Massa (Agadir, Taghazout, Taroudant)</option>
+          <option value="sahara">Sud &amp; Sahara Marocain (Laâyoune, Dakhla)</option>
+          <option value="rabat">Rabat, Fès &amp; Meknès (Axe Administratif &amp; Agricole)</option>
+        </select>
+        <label>Votre Capital de Départ :</label>
+        <select id="biz-cap" onchange="runBiz()">
+          <option value="zero">0 à 5 000 DH (Services, Digital, Conciergerie, Intermédiation)</option>
+          <option value="small" selected>10 000 à 80 000 DH (Sous-location, E-commerce COD, Flotte/Commerce)</option>
+          <option value="big">150 000 DH et + (Achat Studio, Foncier, Projet Touristique)</option>
+        </select>
+        <div id="biz-out" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <!-- 2. PLAN D'ACTION ÉTAPE PAR ÉTAPE -->
+    <div id="sec-roadmap" class="sec" style="display:none">
+      <div class="card">
+        <h3>🚀 Plan d'Action Concret : De 0 DH à vos Premiers Revenus</h3>
+        <div class="row"><span>Étape 1 — Statut Légal (48h) :</span><strong>Inscription Auto-Entrepreneur (1% d'impôt services)</strong></div>
+        <div class="row"><span>Étape 2 — Cash Rapide (Sans Achat) :</span><strong>Conciergerie Airbnb (20% com.) ou Apporteur d'Affaires Immo</strong></div>
+        <div class="row"><span>Étape 3 — Effet de Levier :</span><strong>Sous-location autorisée avec bail légalisé (Marge 2k–5k DH/mois)</strong></div>
+        <div class="row" style="border:none"><span>Étape 4 — Patrimoine 2030 :</span><strong>Achat Studio/F2 à crédit (Règle 35%) avec cash-flow positif</strong></div>
+        <div class="tip">🇲🇦 <strong>نصيحة ذهبية للنجاح في المغرب :</strong> ما تبداش براس مال كبير في الأول. بدا بـ <strong>الخدمات أو التسيير (Conciergerie / E-commerce / الوساطة)</strong> باش تجمع السيولة (Cash)، ومن بعد استثمر الأرباح في العقار المحفظ (Titre Foncier).</div>
+      </div>
+    </div>
+
+    <!-- 3. CONSEILLER IMMO -->
+    <div id="sec-advisor" class="sec" style="display:none">
+      <div class="card">
+        <h3>🎯 Conseiller Stratégique : Où &amp; Comment Investir dans l'Immobilier ?</h3>
+        <label>Votre Budget Disponible (Achat ou Apport en DH) :</label>
+        <select id="adv-bud" onchange="runAdvisor()">
+          <option value="low">Moins de 100 000 DH (Zéro achat : Conciergerie ou Sous-Location)</option>
+          <option value="mid" selected>300 000 DH – 650 000 DH (Studio / F2 économique ou crédit)</option>
+          <option value="high">800 000 DH – 1 500 000+ DH (Studio/F2 haut standing Casa, Rabat, Tanger, Marrakech)</option>
+        </select>
+        <label>Votre Objectif Prioritaire :</label>
+        <select id="adv-goal" onchange="runAdvisor()">
+          <option value="cash" selected>Cash-flow mensuel rapide (Airbnb / Courte durée / Événements 2030)</option>
+          <option value="safe">Revenu stable sans gestion lourde (Location longue durée)</option>
+          <option value="plus">Plus-value patrimoniale (Horizon 2030 &amp; gares TGV Al Boraq)</option>
+        </select>
+        <div id="adv-out" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <!-- 4. QUARTIERS PAR VILLE -->
+    <div id="sec-cities" class="sec" style="display:none">
+      <div class="card">
+        <h3>📍 Analyse Détaillée des Quartiers Rentables au Maroc</h3>
+        <label>Choisissez une ville :</label>
+        <select id="city-sel" onchange="showCity()">
+          <option value="casa">Casablanca &amp; Périphérie (Maarif, Marina, Bouskoura, Dar Bouazza)</option>
+          <option value="rabat">Rabat &amp; Témara (Agdal, Hassan, Hay Riad)</option>
+          <option value="tanger">Tanger (Malabata, Marshan, Tanger Ville)</option>
+          <option value="kech">Marrakech (Guéliz, Hivernage, Médina)</option>
+          <option value="agadir">Agadir &amp; Taghazout (Marina, Founty)</option>
+          <option value="fes">Fès (Ville Nouvelle, Route d'Imouzzer)</option>
+        </select>
+        <div id="city-out" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <!-- 5. SIMULATEUR AIRBNB -->
+    <div id="sec-airbnb" class="sec" style="display:none">
+      <div class="card">
+        <h3>🔑 Simulateur Rentabilité Airbnb &amp; Sous-Location</h3>
+        <div class="g2">
+          <div><label>Prix par nuit (DH) :</label><input type="number" id="ab-rate" value="450" oninput="calcAirbnb()"></div>
+          <div><label>Nuits réservées / mois (sur 30) :</label><input type="number" id="ab-nights" value="18" max="31" oninput="calcAirbnb()"></div>
+          <div><label>Loyer mensuel payé (0 si propriétaire) :</label><input type="number" id="ab-rent" value="4000" oninput="calcAirbnb()"></div>
+          <div><label>Frais plateforme Airbnb/Booking (%) :</label><input type="number" id="ab-fee" value="15" oninput="calcAirbnb()"></div>
+          <div><label>Ménage &amp; consommables / mois (DH) :</label><input type="number" id="ab-clean" value="900" oninput="calcAirbnb()"></div>
+          <div><label>Internet, Eau &amp; Électricité (DH) :</label><input type="number" id="ab-util" value="500" oninput="calcAirbnb()"></div>
+        </div>
+        <div id="ab-out" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <!-- 6. RENDEMENT BRUT VS NET -->
+    <div id="sec-yield" class="sec" style="display:none">
+      <div class="card">
+        <h3>📊 Calculateur Rendement Brut vs Net Simplifié</h3>
+        <div class="g2">
+          <div><label>Prix d'achat du bien (DH) :</label><input type="number" id="y-price" value="600000" oninput="calcYield()"></div>
+          <div><label>Frais d'achat &amp; ameublement (DH) :</label><input type="number" id="y-fees" value="60000" oninput="calcYield()"></div>
+          <div><label>Loyer mensuel espéré (DH) :</label><input type="number" id="y-rent" value="6000" oninput="calcYield()"></div>
+          <div><label>Charges annuelles + vacance (DH/an) :</label><input type="number" id="y-cost" value="18000" oninput="calcYield()"></div>
+        </div>
+        <div id="y-out" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <!-- 7. CRÉDIT MAROC 35% -->
+    <div id="sec-loan" class="sec" style="display:none">
+      <div class="card">
+        <h3>🏦 Capacité d'Emprunt Bancaire au Maroc (Hypothèse 35%)</h3>
+        <div class="g2">
+          <div><label>Salaire net mensuel (DH) :</label><input type="number" id="ln-sal" value="10000" oninput="calcLoan()"></div>
+          <div><label>Crédits en cours / mois (DH) :</label><input type="number" id="ln-debt" value="0" oninput="calcLoan()"></div>
+          <div><label>Durée du prêt (années) :</label><input type="number" id="ln-yrs" value="20" max="25" oninput="calcLoan()"></div>
+          <div><label>Taux d'intérêt annuel (%) :</label><input type="number" id="ln-rate" value="5.06" step="0.01" oninput="calcLoan()"></div>
+        </div>
+        <label>Votre apport personnel disponible (DH) :</label>
+        <input type="number" id="ln-down" value="120000" oninput="calcLoan()">
+        <div id="ln-out" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <!-- 8. CASH-FLOW -->
+    <div id="sec-cashflow" class="sec" style="display:none">
+      <div class="card">
+        <h3>⚖️ Simulateur Cash-Flow &amp; Test de Résistance</h3>
+        <div class="g3">
