@@ -4,32 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maroc Immo, Airbnb & Business OS — 12-en-1</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif}
-body{background:#0B1120;color:#F8FAFC;padding:14px;line-height:1.5}
-.app{max-width:780px;margin:0 auto;background:#111827;border:1px solid #1E293B;border-radius:16px;padding:18px}
-.line{height:5px;border-radius:4px;background:linear-gradient(90deg,#C1272D 50%,#006233 50%);margin-bottom:14px}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.badge{background:rgba(193,39,45,.2);border:1px solid #C1272D;color:#FCA5A5;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
-.pdf{background:#006233;color:#FFF;border:none;padding:7px 12px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer}
-h1{font-size:21px;color:#FBBF24;margin-bottom:4px}
-.lead{font-size:13px;color:#94A3B8;margin-bottom:14px}
-.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px}
-.nb{background:#1E293B;color:#E2E8F0;border:1px solid #334155;padding:8px 5px;border-radius:8px;font-size:11.5px;font-weight:600;cursor:pointer}
-.nb.active{background:#C1272D;border-color:#FBBF24;color:#FFF}
-.card{background:#0F172A;border:1px solid #1E293B;border-radius:12px;padding:14px;margin-bottom:10px}
-h3{font-size:15px;color:#FBBF24;margin-bottom:10px}
-label{display:block;font-size:11.5px;color:#CBD5E1;margin-bottom:4px;font-weight:600}
-select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;padding:9px;border-radius:8px;font-size:13px;margin-bottom:10px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #1E293B;font-size:13px}
-.row strong{color:#34D399}
-.sm{font-size:13px;color:#CBD5E1;margin-bottom:6px}
-.tip{background:rgba(0,98,51,.2);border:1px solid #006233;color:#A7F3D0;padding:10px;border-radius:8px;font-size:12.5px;margin-top:8px}
-.warn{background:rgba(193,39,45,.18);border:1px solid #C1272D;color:#FCA5A5;padding:10px;border-radius:8px;font-size:12.5px;margin-top:8px}
-.fc{background:#064E3B;border:1px solid #10B981;border-radius:10px;padding:12px;color:#ECFDF5;font-size:12.5px;white-space:pre-line}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="app">
@@ -37,6 +12,7 @@ select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;p
 <div class="top"><span class="badge">★ MAROC IMMO, AIRBNB &amp; BUSINESS OS — 12-EN-1</span><button type="button" class="pdf" onclick="window.print()">📥 Exporter PDF</button></div>
 <h1>Guide Complet : Gagner de l'Argent &amp; Investir au Maroc</h1>
 <p class="lead">Coach Business Tout le Maroc • Plan d'Action 0 à 500k DH • Simulateur Airbnb • Rendement Net • Crédit 35% • Cash-Flow • Contrats.</p>
+
 <div class="nav">
 <button type="button" class="nb active" id="n-biz" onclick="go('biz')">💸 1. Gagner au Maroc</button>
 <button type="button" class="nb" id="n-roadmap" onclick="go('roadmap')">🚀 2. Plan d'Action</button>
@@ -51,6 +27,7 @@ select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;p
 <button type="button" class="nb" id="n-tax" onclick="go('tax')">🧾 11. Impôts/Notaire</button>
 <button type="button" class="nb" id="n-lesson" onclick="go('lesson')">📘 12. Cours &amp; الملخص</button>
 </div>
+
 <div id="sec-biz" class="sec"><div class="card"><h3>💸 Coach Business : Comment Gagner de l'Argent Partout au Maroc ?</h3>
 <label>Choisissez votre Région ou Ville au Maroc :</label>
 <select id="biz-reg" onchange="runBiz()">
@@ -68,18 +45,21 @@ select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;p
 <option value="big">150 000 DH et + (Achat Studio, Foncier, Projet Touristique)</option>
 </select>
 <div id="biz-out" style="margin-top:10px"></div></div></div>
+
 <div id="sec-roadmap" class="sec" style="display:none"><div class="card"><h3>🚀 Plan d'Action Concret : De 0 DH à vos Premiers Revenus</h3>
 <div class="row"><span>Étape 1 — Statut Légal (48h) :</span><strong>Inscription Auto-Entrepreneur (1% d'impôt services)</strong></div>
 <div class="row"><span>Étape 2 — Cash Rapide (Sans Achat) :</span><strong>Conciergerie Airbnb (20% com.) ou Apporteur d'Affaires Immo</strong></div>
 <div class="row"><span>Étape 3 — Effet de Levier :</span><strong>Sous-location autorisée avec bail légalisé (Marge 2k–5k DH/mois)</strong></div>
 <div class="row" style="border:none"><span>Étape 4 — Patrimoine 2030 :</span><strong>Achat Studio/F2 à crédit (Règle 35%) avec cash-flow positif</strong></div>
 <div class="tip">🇲🇦 <strong>نصيحة ذهبية :</strong> ما تبداش براس مال كبير في الأول. بدا بـ <strong>الخدمات أو التسيير (Conciergerie / E-commerce / الوساطة)</strong> باش تجمع السيولة (Cash)، ومن بعد استثمر الأرباح في العقار المحفظ (Titre Foncier).</div></div></div>
+
 <div id="sec-advisor" class="sec" style="display:none"><div class="card"><h3>🎯 Conseiller Stratégique : Où &amp; Comment Investir dans l'Immobilier ?</h3>
 <label>Votre Budget Disponible (Achat ou Apport en DH) :</label>
 <select id="adv-bud" onchange="runAdvisor()"><option value="low">Moins de 100 000 DH (Zéro achat : Conciergerie ou Sous-Location)</option><option value="mid" selected>300 000 DH – 650 000 DH (Studio / F2 économique ou crédit)</option><option value="high">800 000 DH – 1 500 000+ DH (Haut standing Casa, Rabat, Tanger, Marrakech)</option></select>
 <label>Votre Objectif Prioritaire :</label>
 <select id="adv-goal" onchange="runAdvisor()"><option value="cash" selected>Cash-flow mensuel rapide (Airbnb / Courte durée / 2030)</option><option value="safe">Revenu stable sans gestion lourde (Location longue durée)</option><option value="plus">Plus-value patrimoniale (Horizon 2030 &amp; gares TGV)</option></select>
 <div id="adv-out" style="margin-top:10px"></div></div></div>
+
 <div id="sec-cities" class="sec" style="display:none"><div class="card"><h3>📍 Analyse Détaillée des Quartiers Rentables au Maroc</h3>
 <label>Choisissez une ville :</label>
 <select id="city-sel" onchange="showCity()"><option value="casa">Casablanca &amp; Périphérie (Maarif, Marina, Bouskoura, Dar Bouazza)</option><option value="rabat">Rabat &amp; Témara (Agdal, Hassan, Hay Riad)</option><option value="tanger">Tanger (Malabata, Marshan, Tanger Ville)</option><option value="kech">Marrakech (Guéliz, Hivernage, Médina)</option><option value="agadir">Agadir &amp; Taghazout (Marina, Founty)</option><option value="fes">Fès (Ville Nouvelle, Route d'Imouzzer)</option></select>
@@ -92,32 +72,38 @@ select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;p
 <div><label>Ménage &amp; consommables / mois :</label><input type="number" id="ab-clean" value="900" oninput="calcAirbnb()"></div>
 <div><label>Internet, Eau &amp; Électricité :</label><input type="number" id="ab-util" value="500" oninput="calcAirbnb()"></div>
 </div><div id="ab-out" style="margin-top:8px"></div></div></div>
+
 <div id="sec-yield" class="sec" style="display:none"><div class="card"><h3>📊 Calculateur Rendement Brut vs Net Simplifié</h3><div class="g2">
 <div><label>Prix d'achat du bien (DH) :</label><input type="number" id="y-price" value="600000" oninput="calcYield()"></div>
 <div><label>Frais d'achat &amp; meubles (DH) :</label><input type="number" id="y-fees" value="60000" oninput="calcYield()"></div>
 <div><label>Loyer mensuel espéré (DH) :</label><input type="number" id="y-rent" value="6000" oninput="calcYield()"></div>
 <div><label>Charges + vacance (DH/an) :</label><input type="number" id="y-cost" value="18000" oninput="calcYield()"></div>
 </div><div id="y-out" style="margin-top:8px"></div></div></div>
+
 <div id="sec-loan" class="sec" style="display:none"><div class="card"><h3>🏦 Capacité d'Emprunt Bancaire Maroc (Règle 35%)</h3><div class="g2">
 <div><label>Salaire net mensuel (DH) :</label><input type="number" id="ln-sal" value="10000" oninput="calcLoan()"></div>
 <div><label>Crédits en cours / mois (DH) :</label><input type="number" id="ln-debt" value="0" oninput="calcLoan()"></div>
 <div><label>Durée du prêt (années) :</label><input type="number" id="ln-yrs" value="20" max="25" oninput="calcLoan()"></div>
 <div><label>Taux annuel (%) :</label><input type="number" id="ln-rate" value="5.06" step="0.01" oninput="calcLoan()"></div>
 </div><label>Apport personnel disponible (DH) :</label><input type="number" id="ln-down" value="120000" oninput="calcLoan()"><div id="ln-out" style="margin-top:8px"></div></div></div>
+
 <div id="sec-cashflow" class="sec" style="display:none"><div class="card"><h3>⚖️ Simulateur Cash-Flow &amp; Test de Résistance</h3><div class="g3">
 <div><label>Loyer encaissé (DH) :</label><input type="number" id="cf-rent" value="3500" oninput="calcCf()"></div>
 <div><label>Mensualité crédit (DH) :</label><input type="number" id="cf-bank" value="2800" oninput="calcCf()"></div>
 <div><label>Charges / mois (DH) :</label><input type="number" id="cf-exp" value="400" oninput="calcCf()"></div>
 </div><div id="cf-out" style="margin-top:8px"></div></div></div>
+
 <div id="sec-compare" class="sec" style="display:none"><div class="card"><h3>🆚 Comparateur : Appartement A vs Appartement B</h3><div class="g2">
 <div style="background:#1E293B;padding:10px;border-radius:8px"><strong style="color:#FBBF24;font-size:13px">🏢 Appartement A</strong><label style="margin-top:6px">Prix (DH) :</label><input type="number" id="ca-p" value="500000" oninput="calcComp()"><label>Loyer (DH) :</label><input type="number" id="ca-r" value="3500" oninput="calcComp()"><label>Crédit (DH) :</label><input type="number" id="ca-b" value="2800" oninput="calcComp()"><label>Charges (DH) :</label><input type="number" id="ca-e" value="400" oninput="calcComp()"></div>
 <div style="background:#1E293B;padding:10px;border-radius:8px"><strong style="color:#34D399;font-size:13px">🏢 Appartement B</strong><label style="margin-top:6px">Prix (DH) :</label><input type="number" id="cb-p" value="420000" oninput="calcComp()"><label>Loyer (DH) :</label><input type="number" id="cb-r" value="3000" oninput="calcComp()"><label>Crédit (DH) :</label><input type="number" id="cb-b" value="2400" oninput="calcComp()"><label>Charges (DH) :</label><input type="number" id="cb-e" value="300" oninput="calcComp()"></div>
 </div><div id="comp-out" style="margin-top:10px"></div></div></div>
+
 <div id="sec-contracts" class="sec" style="display:none"><div class="card"><h3>📜 Générateur de Contrats &amp; Clauses Légales</h3>
 <select id="ct-type" onchange="genContract()"><option value="sub">Clause de Sous-Location Touristique Autorisée (Bail)</option><option value="mgmt">Mandat de Gestion Conciergerie Airbnb (Commission %)</option></select>
 <div class="g2"><input type="text" id="ct-owner" value="M. Karim Benali" oninput="genContract()"><input type="text" id="ct-you" value="Atlas Stay Conciergerie" oninput="genContract()"><input type="text" id="ct-addr" value="Appt 12, Maarif, Casablanca" oninput="genContract()"><input type="text" id="ct-val" value="4 500 DH / 20%" oninput="genContract()"></div>
 <div class="fc" id="ct-out" style="margin-top:8px"></div>
 <button type="button" class="pdf" style="width:100%;margin-top:8px;padding:9px" onclick="copyContract()">📋 Copier le Contrat / la Clause</button></div></div>
+
 <div id="sec-tax" class="sec" style="display:none"><div class="card"><h3>🧾 Frais d'Achat, Fiscalité &amp; Budget Ameublement</h3>
 <div class="row"><span>🏛️ Droits d'enregistrement :</span><strong>4% du prix d'achat</strong></div>
 <div class="row"><span>📑 Conservation Foncière :</span><strong>1,5% + frais fixes</strong></div>
@@ -125,15 +111,15 @@ select,input{width:100%;background:#1E293B;color:#FFF;border:1px solid #334155;p
 <div class="row"><span>💻 Auto-Entrepreneur (Services) :</span><strong>1% du CA (Plafond 200k DH/an)</strong></div>
 <div class="row" style="border:none"><span>🛋️ Pack Ameublement Studio :</span><strong>35 000 – 55 000 DH clé en main</strong></div>
 <div class="tip">🔑 Exigez toujours un <strong>Titre Foncier</strong> vérifié chez le notaire.</div></div></div>
+
 <div id="sec-lesson" class="sec" style="display:none"><div class="card"><h3>📘 Les 3 Modèles &amp; Règles d'Or (خلاصة الدرس)</h3>
 <p class="sm"><strong>1. Gestionnaire :</strong> Vous gérez le bien d'un propriétaire contre 15% à 25% des revenus.</p>
 <p class="sm"><strong>2. Sous-location autorisée :</strong> Bail avec accord écrit du propriétaire pour la courte durée.</p>
 <p class="sm"><strong>3. Propriétaire :</strong> Achat + meubles + loyers + plus-value 2030.</p>
 <div class="tip">🇲🇦 <strong>القاعدة الأساسية بالدارجة :</strong> الاستثمار العقاري ما كيتقاسش غير بالكراء اللي كيدخل، ولكن بالمصاريف، بالقرض، و<strong>هامش الأمان (Marge de sécurité)</strong> إلا نقص الكراء بـ 300 أو 500 درهم.</div></div></div>
+
 <div class="line" style="margin-top:14px;margin-bottom:0"></div>
 </div>
-<script>
-var S=["biz","roadmap","advisor","cities","airbnb","yield","loan","cashflow","compare","contracts","tax","lesson"];
-function go(n){for(var i=0;i<S.length;i++){var id=S[i],s=document.getElementById("sec-"+id),b=document.getElementById("n-"+id);if(s)s.style.display=id===n?"block":"none";if(b)b.className=id===n?"nb active":"nb";}}
-function runBiz(){var reg=document.getElementById("biz-reg").value,cap=document.getElementById("biz-cap").value,R={casa:{n:"Grand Casablanca (Casa, Dar Bouazza, Oulad Azzouz, Bouskoura)",z:"Conciergerie Airbnb a Maarif/Marina ou apporteur d affaires immo sur Dar Bouazza / Oulad Azzouz.",s:"Sous-location meublee pres de CFC, e-commerce COD depuis Derb Omar ou location scooters.",b:"Achat studio/F2 cadres (CFC/Bouskoura) ou local commercial."},nord:{n:"Nord & Tanger Med",z:"Gestionnaire Airbnb pour MRE ou agence sourcing.",s:"Sous-location Malabata / Tanger Ville ou transport touristique.",b:"Studio pres gare TGV Al Boraq ou maison d hotes."},kech:{n:"Marrakech & Centre",z:"Co-hote Airbnb & excursions Agafay (20-30% com.).",s:"Sous-location autorisee Gueliz / Hivernage.",b:"Appartement touristique ou Riad titre en Medina."},sud:{n:"Agadir & Souss-Massa",z:"Conciergerie surfeurs Taghazout ou vente Argan bio.",s:"Surf-house / coliving en sous-location a Taghazout.",b:"Appartement vue mer Founty / Marina."},sahara:{n:"Sud & Sahara Marocain (Laayoune, Dakhla)",z:"Services logistiques, kitesurf Dakhla ou conseil.",s:"Restauration rapide moderne ou sous-location cadres.",b:"Immobilier cadres ou ecolodge lagune Dakhla."},rabat:{n:"Rabat, Fes & Meknes",z:"Accompagnement administratif ou conciergerie Agdal.",s:"Sous-location diplomates Rabat ou colocation etudiante Fes.",b:"Appartement Hay Riad / Temara ou immeuble etudiant Fes."}};var r=R[reg],p=cap==="zero"?r.z:cap==="small"?r.s:r.b;document.getElementById("biz-out").innerHTML='<div class="row"><span>📍 Zone :</span><strong>'+r.n+'</strong></div><p class="sm" style="margin-top:8px"><strong>💡 Opportunite :</strong> '+p+'</p><div class="tip">🇲🇦 <strong>خطوة البداية :</strong> سجل راسك كمقاول ذاتي (Auto-Entrepreneur) باش تخدم بشكل قانوني وبضريبة 1% فقط.</div>';}
-function runAdvisor(){var b=document.getElementById("adv-bud").value,g=document.getElementById("adv-goal").value,t=b==="low"?'<div class="row"><span>🚀 Strategie :</span><strong>Conciergerie (15-25%) ou Sous-Location</strong></div><p class="sm">Demarrez a Maarif, Gueliz, Malabata ou Agadir Marina sans achat.</p>':b==="mid"?'<div class="row"><span>🏢 Strategie :</span><strong>Studio / F2 (300k-650k DH)</strong></div><p class="sm">Ciblez Belvedere, Oulad Azzouz, Temara ou Tanger Centre. Visez >8,5% brut.</p>':'<div class="row"><span>👑 Strategie :</span><strong>Haut Standing Horizon 2030</strong></div><p class="sm">Casa Marina/CFC, Hay Riad, Malabata, Hivernage. Negociez 8-12% sous le prix.</p>';if(g==="plus")t+='<div class="tip">🚄 Ciblez a moins de 15 min des gares TGV Al Boraq et des stades 2030.</div>';document.getElementById("adv-out").innerHTML=t;}
+<script src="app.js"></script>
+</body>
+</html>
